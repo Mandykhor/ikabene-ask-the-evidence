@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IKABENE London: Contemporary art, technology and sustainable luxury.">
+  <title>IKABENE London</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b0b0b;
+      color: #f5f1e8;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 24px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo {
+      font-size: 25px;
+      letter-spacing: 5px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #f5f1e8;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 8%;
+      background: radial-gradient(ellipse at center, #29251e, #0b0b0b 70%);
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 88px);
+      letter-spacing: 8px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: #c9c2b5;
+      margin-bottom: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 30px;
+      border: 1px solid #c9b27c;
+      color: #c9b27c;
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: #c9b27c;
+      color: #0b0b0b;
+    }
+
+    section {
+      padding: 70px 8%;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      letter-spacing: 3px;
+    }
+
+    section p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #c9c2b5;
+    }
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      border-top: 1px solid #333;
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .hero h1 {
+        letter-spacing: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">IKABENE</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#art">Art</a>
+      <a href="#technology">Technology</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>IKABENE</h1>
+      <p>
+        Where contemporary art, sustainable luxury and
+        forward-thinking technology meet.
+      </p>
+      <a class="button" href="#about">DISCOVER OUR WORLD</a>
+    </section>
+
+    <section id="about">
+      <h2>A NEW VISION OF LUXURY</h2>
+      <p>
+        IKABENE brings together creativity, design and innovation
+        to explore a more thoughtful future for luxury living.
+      </p>
+    </section>
+
+    <section id="art">
+      <h2>IKABENE.ART</h2>
+      <p>
+        Discover contemporary art jewellery and wearable art
+        inspired by individuality, imagination and modern design.
+      </p>
+    </section>
+
+    <section id="technology">
+      <h2>IKABENE.TECH</h2>
+      <p>
+        Exploring technology-led ideas for trust, transparency
+        and a more sustainable future.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 IKABENE London. All rights reserved.
+  </footer>
+
+</body>
+</html>
