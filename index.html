@@ -2,173 +2,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="IKABENE London: Contemporary art, technology and sustainable luxury.">
-  <title>IKABENE London</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #0b0b0b;
-      color: #f5f1e8;
-      line-height: 1.6;
-    }
-
-    header {
-      padding: 24px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #333;
-    }
-
-    .logo {
-      font-size: 25px;
-      letter-spacing: 5px;
-      font-weight: bold;
-    }
-
-    nav a {
-      color: #f5f1e8;
-      text-decoration: none;
-      margin-left: 24px;
-      font-size: 14px;
-    }
-
-    .hero {
-      min-height: 75vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 60px 8%;
-      background: radial-gradient(ellipse at center, #29251e, #0b0b0b 70%);
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 8vw, 88px);
-      letter-spacing: 8px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      max-width: 620px;
-      color: #c9c2b5;
-      margin-bottom: 32px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 14px 30px;
-      border: 1px solid #c9b27c;
-      color: #c9b27c;
-      text-decoration: none;
-      letter-spacing: 2px;
-      transition: 0.3s;
-    }
-
-    .button:hover {
-      background: #c9b27c;
-      color: #0b0b0b;
-    }
-
-    section {
-      padding: 70px 8%;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 30px;
-      margin-bottom: 20px;
-      letter-spacing: 3px;
-    }
-
-    section p {
-      max-width: 720px;
-      margin: 0 auto;
-      color: #c9c2b5;
-    }
-
-    footer {
-      padding: 25px;
-      text-align: center;
-      border-top: 1px solid #333;
-      color: #aaa;
-      font-size: 13px;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      nav a {
-        margin: 0 8px;
-      }
-
-      .hero h1 {
-        letter-spacing: 4px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IKABENE | Ask the Evidence</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#101820;color:#f5f5f5;font-family:Arial,sans-serif}
+main{max-width:780px;margin:40px auto;padding:24px}
+header{border-bottom:2px solid #b99b65;padding-bottom:18px}
+h1{font-size:32px;margin-bottom:8px}
+.gold{color:#d9bc82}
+.card{background:#1e2a35;padding:22px;border-radius:12px;margin-top:20px}
+button{background:#d9bc82;color:#111;border:0;padding:13px 16px;border-radius:8px;cursor:pointer;margin:5px;font-weight:bold}
+button:hover{background:#f0d5a0}
+.output{white-space:pre-line;line-height:1.7}
+small{color:#bfc8d0}
+footer{margin-top:30px;color:#bfc8d0;font-size:13px}
+</style>
 </head>
 <body>
+<main>
+<header>
+<p class="gold">IKABENE.tech | Design.Tech.Trust.</p>
+<h1>ASK THE EVIDENCE</h1>
+<p>Product evidence, traceability and readiness.</p>
+<small>Hackathon demonstration v0.4 — fictional data</small>
+</header>
 
-  <header>
-    <div class="logo">IKABENE</div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#art">Art</a>
-      <a href="#technology">Technology</a>
-    </nav>
-  </header>
+<section class="card">
+<h2>Ask a product evidence question</h2>
+<p>Choose what you would like to investigate.</p>
+<button onclick="ask('origin')">Product origin</button>
+<button onclick="ask('claims')">Product claims</button>
+<button onclick="ask('gaps')">Evidence gaps</button>
+<button onclick="ask('actions')">Next actions</button>
+<button onclick="reset()">Restart</button>
+</section>
 
-  <main>
-    <section class="hero">
-      <h1>IKABENE</h1>
-      <p>
-        Where contemporary art, sustainable luxury and
-        forward-thinking technology meet.
-      </p>
-      <a class="button" href="#about">DISCOVER OUR WORLD</a>
-    </section>
+<section class="card">
+<h2 class="gold" id="heading">Welcome</h2>
+<div class="output" id="answer" aria-live="polite">
+Select a question to explore the evidence journey.
+</div>
+</section>
 
-    <section id="about">
-      <h2>A NEW VISION OF LUXURY</h2>
-      <p>
-        IKABENE brings together creativity, design and innovation
-        to explore a more thoughtful future for luxury living.
-      </p>
-    </section>
+<section class="card">
+<h2>Evidence status</h2>
+<p id="status">Awaiting question</p>
+<button onclick="downloadReport()">Download demonstration report</button>
+</section>
 
-    <section id="art">
-      <h2>IKABENE.ART</h2>
-      <p>
-        Discover contemporary art jewellery and wearable art
-        inspired by individuality, imagination and modern design.
-      </p>
-    </section>
+<footer>
+<p>Simulation only. No live Alexa+, AWS or AI service is connected.</p>
+<p>Sample records are fictional. No regulatory certification, product authenticity or export eligibility is asserted.</p>
+<p>© 2026 IKABENE.tech</p>
+</footer>
+</main>
 
-    <section id="technology">
-      <h2>IKABENE.TECH</h2>
-      <p>
-        Exploring technology-led ideas for trust, transparency
-        and a more sustainable future.
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2026 IKABENE London. All rights reserved.
-  </footer>
-
+<script>
+const evidence = {
+ origin: {
+ title:"01 — Product Origin",
+ status:"Illustrative record — not independently verified",
+ answer:"Sample product: Botanical Tea A.\nDeclared origin: Malaysia.\nBatch: DEMO-001.\nSource: fictional supplier declaration.\n\nA declaration is not independent verification."
+ },
+ claims: {
+ title:"02 — Product Claims",
+ status:"Claims require supporting evidence",
+ answer:"Claim: Contains botanical ingredients.\nSupporting document: sample ingredient list.\n\nMissing: authenticated supplier specification and laboratory assessment.\n\nNo health or export claim is approved."
+ },
+ gaps: {
+ title:"03 — Evidence Gaps",
+ status:"Evidence incomplete",
+ answer:"1. Supplier identity not authenticated.\n2. Laboratory assessment not provided.\n3. Batch traceability not independently tested.\n4. Market-specific regulatory assessment pending."
+ },
+ actions: {
+ title:"04 — Recommended Actions",
+ status:"Human review required",
+ answer:"1. Request supplier documentation.\n2. Obtain ingredient and laboratory evidence.\n3. Verify batch records and source links.\n4. Ask a qualified specialist to assess destination-market rules.\n\nThese are recommendations, not regulatory approval."
+ }
+};
+let current=null;
+function ask(key){
+ current=key;
+ document.getElementById("heading").textContent=evidence[key].title;
+ document.getElementById("answer").textContent=evidence[key].answer;
+ document.getElementById("status").textContent=evidence[key].status;
+}
+function reset(){
+ current=null;
+ document.getElementById("heading").textContent="Welcome";
+ document.getElementById("answer").textContent="Select a question to explore the evidence journey.";
+ document.getElementById("status").textContent="Awaiting question";
+}
+function downloadReport(){
+ const report="IKABENE ASK THE EVIDENCE — DEMONSTRATION\n\n"+
+ (current?evidence[current].title+"\n"+evidence[current].answer:"No question selected.")+
+ "\n\nFictional data. Not independently verified.";
+ const blob=new Blob([report],{type:"text/plain"});
+ const url=URL.createObjectURL(blob);
+ const a=document.createElement("a");
+ a.href=url;
+ a.download="ikabene-evidence-demo.txt";
+ a.click();
+ URL.revokeObjectURL(url);
+}
+</script>
 </body>
 </html>
